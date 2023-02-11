@@ -3,10 +3,12 @@ package com.example.qurannavigation;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup type_group;
     RadioGroup language_group;
 
+    ImageView git_link;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         language_group = findViewById(R.id.language_group);
         edt_number = findViewById(R.id.edt_number);
         btn_navigate = findViewById(R.id.btn_navigate);
+        git_link=findViewById(R.id.git_link);
         btn_navigate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("Type",selectedTypeText);
                 intent.putExtra("Language",selectedLangText);
                 intent.putExtra("Number",number);
+                startActivity(intent);
+            }
+        });
+
+        git_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri webpage = Uri.parse("https://github.com/AqibAmin/QuranNavigation");
+                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 startActivity(intent);
             }
         });
