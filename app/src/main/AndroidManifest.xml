@@ -12,6 +12,9 @@
         android:theme="@style/Theme.QuranNavigation"
         tools:targetApi="31">
         <activity
+            android:name=".QuranNavigation"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
