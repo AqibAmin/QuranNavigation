@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         git_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri webpage = Uri.parse("https://github.com/AqibAmin/QuranNavigation");
+                Uri webpage = Uri.parse("https://github.com/AqibAmin/QuranNavigation/commits/main");
                 Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
                 startActivity(intent);
             }
